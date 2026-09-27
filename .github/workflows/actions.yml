@@ -1,1 +1,19 @@
-name: 
+name: Monedes
+
+on:
+  push: [ main ]
+
+jobs:
+  create-list:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: Configurem python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: python ./euro.py
