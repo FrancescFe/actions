@@ -2,7 +2,7 @@ name: Monedes
 
 on:
   push: 
-    branches: [ main ]
+    branches: [ development ]
 
 jobs:
   create-list:
@@ -20,5 +20,5 @@ jobs:
       - name: Preparem l'entorn amb els paquets
         run: pip install -r requirements.txt
           
-      - name: Correm l'script
-        run: python ./euro.py
+      - name: Correm l'script només per a USD
+        run: python ./euro.py USD
